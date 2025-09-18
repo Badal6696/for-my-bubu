@@ -15,7 +15,7 @@ function unlockNotes() {
   const notes = document.getElementById("notes");
   const lock = document.getElementById("lock");
 
-  if (pass === "DuduBubu4eva") {
+  if (pass === "iloveyoumerirasmalai") {
     notes.classList.remove("hidden");
     lock.textContent = "🔓";
     lock.style.color = "#ff69b4";
