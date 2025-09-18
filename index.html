@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dudu & Bubu’s Love Nest 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💖 Dudu & Bubu’s Love Nest 💖</h1>
+      <p><em>— Where Every Click is a Kiss, Every Game is a Hug —</em></p>
+    </header>
+
+    <section class="welcome">
+      <h2>🌹 Welcome, My Love 💕</h2>
+      <blockquote>
+        “In a world full of noise, you’re my favorite melody.<br>
+        In a universe of stars, you’re my dudu 🐻 and I’m your bubu 🐰 — forever cuddled in love.”
+      </blockquote>
+    </section>
+
+    <!-- GAMES -->
+    <section class="games">
+      <h2>🎮 Play With Me, Bubu! 🎮</h2>
+
+      <div class="game-card">
+        <h3>❤️ 1. “Catch My Heart” — Dudu’s Chase Game</h3>
+        <p>Help Dudu 🐻 chase floating hearts 💘 while avoiding sneaky clouds ☁️! Collect 50 hearts to unlock a secret love note!</p>
+        <button onclick="playGame('catch')">PLAY NOW — FOR MY BUBU 🐰💘</button>
+      </div>
+
+      <div class="game-card">
+        <h3>🧩 2. “Memory Lane: Our Moments”</h3>
+        <p>Flip cards to match our favorite memories 🏖️🍿☔💋… Collect all to reveal a surprise video!</p>
+        <button onclick="playGame('memory')">FLIP WITH LOVE 🐻💞🐰</button>
+      </div>
+
+      <div class="game-card">
+        <h3>🎲 3. “Truth or Dare: Sweet Edition”</h3>
+        <p>Spin the wheel! Truth or Dare with cuddly challenges!</p>
+        <button onclick="playGame('truthdare')">SPIN, MY BUBU 💫</button>
+      </div>
+
+      <div class="game-card">
+        <h3>🎵 4. “Love Song Jukebox”</h3>
+        <p>Pick 3 songs that describe us. I’ll make a custom Spotify playlist!</p>
+        <button onclick="playGame('jukebox')">CREATE OUR SOUNDTRACK 🐰🎶🐻</button>
+      </div>
+    </section>
+
+    <!-- SECRET NOTES -->
+    <section class="secret-notes">
+      <h2>💌 Secret Love Notes <span id="lock">🔒</span></h2>
+      <p><em>Hidden behind a password only you know… because some love is meant to be whispered.</em></p>
+      <input type="password" id="password" placeholder="Enter password...">
+      <button onclick="unlockNotes()">UNLOCK ❤️</button>
+      <div id="notes" class="hidden">
+        <blockquote>“Even when we’re apart, my heart does a little dance every time my phone lights up with your name. You’re my favorite notification, Bubu.” — Dudu 🐻</blockquote>
+        <blockquote>“I still smile at that goofy selfie we took with the ice cream. You had sprinkles on your nose. I didn’t tell you… I wanted to kiss them off.” — Bubu 🐰</blockquote>
+      </div>
+    </section>
+
+    <!-- STAR MAP -->
+    <section class="star-map">
+      <h2>🌠 Our Star Map 🌙</h2>
+      <p><em>Click any star to reveal a reason why I love you:</em></p>
+      <div class="stars">
+        <div class="star" onclick="showStarText(this)" data-text="The way you laugh at your own jokes.">⭐</div>
+        <div class="star" onclick="showStarText(this)" data-text="How you steal the blankets… and I let you.">⭐</div>
+        <div class="star" onclick="showStarText(this)" data-text="You saying ‘good morning’ like it’s the first day of forever.">⭐</div>
+        <div class="star" onclick="showStarText(this)" data-text="Your weird dance moves when no one’s watching… except me. I’m always watching. 😘">⭐</div>
+      </div>
+      <p id="star-reveal"></p>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="gallery">
+      <h2>📸 Gallery of Us: “Dudu & Bubu Through the Seasons” 📸</h2>
+      <div class="photos">
+        <div class="photo">🍂 Fall cuddles</div>
+        <div class="photo">⛄ Snow angel fails</div>
+        <div class="photo">🌸 Spring picnics</div>
+        <div class="photo">☀️ Summer tan lines</div>
+      </div>
+      <button id="add-memory-btn">+ Add Our Next Memory</button>
+      <input type="file" id="memory-upload" accept="image/*" style="display:none">
+    </section>
+
+    <!-- LOVE NOTE FORM -->
+    <section class="love-note">
+      <h2>💌 Leave Me a Note, Bubu 💌</h2>
+      <textarea id="note-input" placeholder="Type your sweetest thought, funniest joke, or midnight craving…"></textarea>
+      <button onclick="sendNote()">SEND TO DUDU 🐻</button>
+      <p id="note-response"></p>
+    </section>
+
+    <!-- SURPRISE BOX -->
+    <section class="surprise">
+      <h2>🎁 Surprise Me, Dudu! 🎁</h2>
+      <button id="surprise-btn">OPEN SURPRISE BOX 🐰</button>
+      <div id="surprise-content"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>“You’re my dudu 🐻, I’m your bubu 🐰 — and no game, no distance, no time can change that.”</p>
+      <p><em>Made with sleepy coding nights, too much coffee, and infinite love — just for you, Bubu.</em></p>
+      <p>🌙 Refresh tomorrow… I might’ve added a new game or hidden note 😉</p>
+      <p>🐻🐰 <strong>Dudu & Bubu emoji activated. Love shields: ON.</strong></p>
+    </footer>
+
+    <!-- EASTER EGG -->
+    <div id="easter-egg" class="hidden">
+      <h2>🎉 BUBU FOUND THE EASTER EGG! 🎉</h2>
+      <p>You’re the best bubu a dudu could ever ask for 🐻💖🐰</p>
+      <img src="https://media.giphy.com/media/l0HlHFRbmaZbqQvO4/giphy.gif" alt="Flying to the moon">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
